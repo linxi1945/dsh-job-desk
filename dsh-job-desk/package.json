@@ -1,0 +1,25 @@
+{
+  "name": "dsh-job-desk",
+  "version": "0.1.0",
+  "description": "DSH 求职投递插件：设置页管理招聘平台账号（在浏览器登录，插件不保存密码）、求职偏好与投递附言；AI 读简历推荐岗位，链接点开跳到平台手动投递。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "client.js", "platforms.js", "edge.js", "cordis.patch.yml", "skill/", "README.md", "LICENSE"],
+  "dsh": {
+    "engines": { "dsh": ">=0.2.0-rc.2" },
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "inject": ["@deepseek-ai/dsh-client-runtime", "@deepseek-ai/dsh-client-ui-settings"]
+    }
+  },
+  "keywords": ["dsh-plugin", "deepseek-harness", "job", "求职", "招聘"],
+  "license": "MIT",
+  "engines": { "node": ">=22.4" },
+  "scripts": { "test": "node --test test/*.test.mjs" }
+}

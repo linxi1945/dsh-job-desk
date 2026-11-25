@@ -1,0 +1,5 @@
+# dsh-job-desk bundle patch: host half (settings file + /dsh-jobs-api route +
+# installs the job-recommender skill) and the client settings section.
+- insert:
+    - id: dsh-job-desk
+      name: dsh-job-desk
